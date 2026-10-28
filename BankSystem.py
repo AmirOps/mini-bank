@@ -25,8 +25,8 @@ class BankSystem():
         print("Вы успешно создали счет")
         for user in self.users:
             if user["id"] == account_id:
-                print(f"Номер счета: {user["id"]}")
-                print(f"Баланс: {user["balance"]}")
+                print(f"Номер счета: {user['id']}")
+                print(f"Баланс: {user['balance']}")
 
         
     
@@ -41,8 +41,8 @@ class BankSystem():
             if user["id"] == account_id:
                 print("Пользователь найден!")
                 print()
-                print(f"Имя владельца: {user["name"]}")
-                print(f"Баланс: {user["balance"]}")
+                print(f"Имя владельца: {user['name']}")
+                print(f"Баланс: {user['balance']}")
                 print()
                 while True:
                     try:
@@ -52,7 +52,7 @@ class BankSystem():
                         print("Введите число!")
                 if num > 0:
                     user["balance"] += num
-                    print(f"Баланс: {user["balance"]}")
+                    print(f"Баланс: {user['balance']}")
                     print("Баланс поплнен!")
                     user["history"].append(f"Поплнение счета на сумму: {num} руб.")
                 else:
@@ -71,8 +71,8 @@ class BankSystem():
             if user["id"] == account_id:       
                 print("Пользователь найден!")
                 print()
-                print(f"Имя владельца: {user["name"]}")
-                print(f"Баланс: {user["balance"]}")
+                print(f"Имя владельца: {user['name']}")
+                print(f"Баланс: {user['balance']}")
                 print()
                 while True:
                     try:
@@ -89,7 +89,7 @@ class BankSystem():
                     break
                 else:
                     user["balance"] -= num
-                    print(f"Баланс: {user["balance"]}")
+                    print(f"Баланс: {user['balance']}")
                 print("Успешно сняли с баланса деньги")
                 user["history"].append(f"Снятие со счета денег на сумму: {num} руб.")
                 break
@@ -106,8 +106,8 @@ class BankSystem():
             if user1["id"] == account_id:       
                 print("Пользователь найден!")
                 print()
-                print(f"Имя владельца: {user1["name"]}")
-                print(f"Баланс: {user1["balance"]}")
+                print(f"Имя владельца: {user1['name']}")
+                print(f"Баланс: {user1['balance']}")
                 print()
                 try:
                     account_toTransfer_id = int(input("Введите номер счета кому перевести: "))
@@ -124,8 +124,8 @@ class BankSystem():
                                 break                           
                         print("Пользователь найден!")
                         print()
-                        print(f"Имя владельца: {user2["name"]}")
-                        print(f"Баланс: {user2["balance"]}")
+                        print(f"Имя владельца: {user2['name']}")
+                        print(f"Баланс: {user2['balance']}")
                         print()
                         break
                 else:
@@ -152,11 +152,11 @@ class BankSystem():
                     user1["history"].append(f"Перевод денег на чужой счет на сумму: {num} руб. для {user2["name"]} с id - {user2["id"]}")
                     user2["history"].append(f"Вам пришел перевод с другого счета на сумму: {num} руб. от {user1["name"]} с id - {user1["id"]}")
                     print()
-                    print(f"Имя владельца 1: {user1["name"]}")
-                    print(f"Баланс: {user1["balance"]}")
+                    print(f"Имя владельца 1: {user1['name']}")
+                    print(f"Баланс: {user1['balance']}")
                     print()
-                    print(f"Имя владельца 2: {user2["name"]}")
-                    print(f"Баланс: {user2["balance"]}")
+                    print(f"Имя владельца 2: {user2['name']}")
+                    print(f"Баланс: {user2['balance']}")
                     break
         else:
             print("Пользователь не найден")
@@ -174,7 +174,7 @@ class BankSystem():
                     print("История пуста")
                     break 
                 else:             
-                    print("История: ", *user["history"], sep="\n")        
+                    print("История: ", *user['history'], sep="\n")        
                     break
         else:
             print("Пользователь не найден")
